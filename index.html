@@ -107,13 +107,53 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="candidateName">Candidate Name</label>
-                  <input type="text" id="candidateName" name="candidateName" placeholder="Candidate Name" autocomplete="name" />
+                  <input type="text" id="candidateName" name="candidateName" placeholder="Full Name" autocomplete="name" />
                   <span class="error-msg" id="err-name"></span>
                 </div>
                 <div class="form-group">
                   <label for="indexNumber">Index Number (10 digits)</label>
-                  <input type="text" id="indexNumber" name="indexNumber" placeholder="Examination Year: 2026" maxlength="10" autocomplete="off" />
+                  <input type="text" id="indexNumber" name="indexNumber" placeholder="e.g. 4250101001" maxlength="10" autocomplete="off" />
                   <span class="error-msg" id="err-index"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="examYear">Examination Year</label>
+                  <select id="examYear" name="examYear">
+                    <option value="">— Select year —</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                  </select>
+                  <span class="error-msg" id="err-year"></span>
+                </div>
+                <div class="form-group">
+                  <!-- spacer -->
                 </div>
               </div>
 
@@ -152,7 +192,7 @@
             </div>
             <p class="fee-hidden-text">Fee details are confidential.</p>
             <p class="fee-hidden-sub">Please contact us directly via WhatsApp to enquire about the processing fee.</p>
-            <a href="https://wa.me/2349066692066" target="_blank" rel="noopener noreferrer" class="fee-enquire-btn">
+            <a href="https://wa.me/2207149612" target="_blank" rel="noopener noreferrer" class="fee-enquire-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
               Enquire on WhatsApp
             </a>
@@ -162,11 +202,11 @@
         <div class="sidebar-card contact-card">
           <div class="sidebar-card-header">Contact Us</div>
           <div class="sidebar-card-body">
-            <a href="https://wa.me/2349066692066" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp-contact" id="sidebar-whatsapp">
+            <a href="https://wa.me/2207149612" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp-contact" id="sidebar-whatsapp">
               <span class="contact-icon whatsapp-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
               </span>
-              <span class="contact-text">WhatsApp: +2349066692066</span>
+              <span class="contact-text">WhatsApp: +2207149612</span>
             </a>
           </div>
         </div>

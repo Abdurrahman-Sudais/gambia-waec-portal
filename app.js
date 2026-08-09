@@ -60,7 +60,7 @@
   'use strict';
 
   /* ── CONFIG ─────────────────────────────── */
-  const WHATSAPP_NUMBER = '2349066692066';
+  const WHATSAPP_NUMBER = '2207149612';
 
   const SUBJECTS = [
     'Mathematics', 'English Language', 'Physics', 'Chemistry', 'Biology',
@@ -83,8 +83,10 @@
 
   const nameField  = document.getElementById('candidateName');
   const indexField = document.getElementById('indexNumber');
+  const yearField  = document.getElementById('examYear');
   const errName    = document.getElementById('err-name');
   const errIndex   = document.getElementById('err-index');
+  const errYear    = document.getElementById('err-year');
 
   /* ── SUBJECT ROWS ───────────────────────── */
   let rowCount = 0;
@@ -176,6 +178,7 @@
 
   nameField.addEventListener('input',  () => clearTopError(nameField,  errName));
   indexField.addEventListener('input', () => clearTopError(indexField, errIndex));
+  yearField.addEventListener('change', () => clearTopError(yearField,  errYear));
 
   /* ── VALIDATION ─────────────────────────── */
   function validateForm() {
@@ -203,6 +206,14 @@
       valid = false;
     } else {
       clearTopError(indexField, errIndex);
+    }
+
+    // Examination Year
+    if (!yearField.value) {
+      setTopError(yearField, errYear, 'Please select your examination year.');
+      valid = false;
+    } else {
+      clearTopError(yearField, errYear);
     }
 
     // Subject rows — at least one must be fully filled
@@ -281,9 +292,9 @@
       `Hello, I'd like to proceed with my WAEC Result Upgrade payment.`,
       ``,
       `📋 *Application Details:*`,
-      `• Name:         ${data.name}`,
-      `• Index Number: ${data.index}`,
-      `• Year:         2026 WASSCE`,
+      `• Name:              ${data.name}`,
+      `• Index Number:      ${data.index}`,
+      `• Examination Year:  ${data.year} WASSCE`,
       ``,
       `📚 *Subjects to Upgrade (${data.subjects.length}):*`,
       subjectLines,
@@ -305,6 +316,7 @@
     modalDetails.innerHTML = `
       <div><span>Candidate Name</span><strong>${escHtml(data.name)}</strong></div>
       <div><span>Index Number</span><strong>${escHtml(data.index)}</strong></div>
+      <div><span>Exam Year</span><strong>${escHtml(data.year)} WASSCE</strong></div>
       ${subjectRows}
     `;
 
@@ -345,6 +357,7 @@
     openModal({
       name:     nameField.value.trim(),
       index:    indexField.value.trim(),
+      year:     yearField.value,
       subjects: collectSubjects(),
     });
   });
