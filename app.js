@@ -84,9 +84,11 @@
   const nameField  = document.getElementById('candidateName');
   const indexField = document.getElementById('indexNumber');
   const yearField  = document.getElementById('examYear');
+  const typeField  = document.getElementById('examType');
   const errName    = document.getElementById('err-name');
   const errIndex   = document.getElementById('err-index');
   const errYear    = document.getElementById('err-year');
+  const errType    = document.getElementById('err-type');
 
   /* ── SUBJECT ROWS ───────────────────────── */
   let rowCount = 0;
@@ -179,6 +181,7 @@
   nameField.addEventListener('input',  () => clearTopError(nameField,  errName));
   indexField.addEventListener('input', () => clearTopError(indexField, errIndex));
   yearField.addEventListener('change', () => clearTopError(yearField,  errYear));
+  typeField.addEventListener('change', () => clearTopError(typeField,  errType));
 
   /* ── VALIDATION ─────────────────────────── */
   function validateForm() {
@@ -214,6 +217,14 @@
       valid = false;
     } else {
       clearTopError(yearField, errYear);
+    }
+
+    // Examination Type
+    if (!typeField.value) {
+      setTopError(typeField, errType, 'Please select your examination type.');
+      valid = false;
+    } else {
+      clearTopError(typeField, errType);
     }
 
     // Subject rows — at least one must be fully filled
@@ -294,7 +305,8 @@
       `📋 *Application Details:*`,
       `• Name:              ${data.name}`,
       `• Index Number:      ${data.index}`,
-      `• Examination Year:  ${data.year} WASSCE`,
+      `• Examination Year:  ${data.year}`,
+      `• Examination Type:  ${data.type}`,
       ``,
       `📚 *Subjects to Upgrade (${data.subjects.length}):*`,
       subjectLines,
@@ -316,7 +328,8 @@
     modalDetails.innerHTML = `
       <div><span>Candidate Name</span><strong>${escHtml(data.name)}</strong></div>
       <div><span>Index Number</span><strong>${escHtml(data.index)}</strong></div>
-      <div><span>Exam Year</span><strong>${escHtml(data.year)} WASSCE</strong></div>
+      <div><span>Exam Year</span><strong>${escHtml(data.year)}</strong></div>
+      <div><span>Exam Type</span><strong>${escHtml(data.type)}</strong></div>
       ${subjectRows}
     `;
 
@@ -358,6 +371,7 @@
       name:     nameField.value.trim(),
       index:    indexField.value.trim(),
       year:     yearField.value,
+      type:     typeField.value,
       subjects: collectSubjects(),
     });
   });
