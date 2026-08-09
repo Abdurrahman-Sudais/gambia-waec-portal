@@ -817,6 +817,67 @@ body {
 
 .how-list li strong { color: var(--navy); }
 
+/* Portal Instructions Steps */
+.info-intro {
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  line-height: 1.45;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.info-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--off-white);
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--light-gray);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.info-steps li:hover {
+  border-color: #cbd5e0;
+  background: #f8fafc;
+}
+
+.info-steps .step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.info-steps .step-text {
+  font-size: 0.78rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.info-steps .step-text strong {
+  color: var(--orange-dark);
+}
+
 /* ── FOOTER ─────────────────────────────────── */
 .site-footer {
   background: var(--navy-dark);
